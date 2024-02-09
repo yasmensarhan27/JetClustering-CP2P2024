@@ -3,7 +3,6 @@
   "name": "Jet Clustering Project",
   "service": "codespace",
   "build": {
-    "image": "mcr.microsoft.com/devcontainers/ubuntu:22.04",
     "dockerfi": "Dockerfile"
   },
   "settings": {
