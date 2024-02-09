@@ -1,8 +1,8 @@
 FROM ubuntu:20.04
 
 # Install necessary dependencies
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apk update && \
+    DEBIAN_FRONTEND=noninteractive apk add -y \
     build-essential \
     cmake \
     git \
@@ -43,7 +43,7 @@ RUN git clone --branch 'v8303' --depth 1 https://github.com/alisw/pythia8.git &&
     cd ..
 
 # Set the default shell
-SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/ash", "-c"]
 
 # Set the default working directory
 WORKDIR /workspace
