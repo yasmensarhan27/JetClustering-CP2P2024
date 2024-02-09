@@ -1,1 +1,8 @@
-
+{
+    "name": "Jet Clustering Project Environment",
+    "image": "mcr.microsoft.com/vscode/devcontainers/cpp:0-ubuntu-20.04",
+    "extensions": [
+        "ms-vscode.cpptools"
+    ],
+    "postCreateCommand": "bash -c 'apt-get update && apt-get install -y git root-system-bin libfastjet-dev pythia8 && rm -rf /var/lib/apt/lists/*'"
+}
