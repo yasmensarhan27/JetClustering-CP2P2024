@@ -1,15 +1,17 @@
+
 {
-  "name": "JetClusteringDevContainer",
-  "image": "Dockerfile",
-  "extensions": [
-    // Add any Visual Studio Code extensions you need
-  ],
-  "runArgs": [
-    "--cap-add=SYS_PTRACE",   // Required for debugging in some scenarios
-    "--security-opt", "seccomp=unconfined"
-  ],
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+  "name": "Jet Clustering Project",
+  "service": "codespace",
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "bash .devcontainer/init.sh"
+  "settings": {
+    "hostPorts": [
+      {
+        "containerPort": 8000,
+        "hostPort": 3000
+      }
+    ]
+  },
+  "image": "mcr.microsoft.com/devcontainers/ubuntu:22.04"
 }
