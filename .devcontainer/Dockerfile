@@ -7,8 +7,8 @@ RUN apt-get update -y
 RUN apt-get install -y \
     build-essential \
     git \
-    cmake\
-    g++\
+    cmake \
+    g++ \
     clang\
     wget \
     curl \
