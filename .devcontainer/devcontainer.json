@@ -1,4 +1,15 @@
 {
-    "name": "JetClusteringProject",
-    "dockerFile": "Dockerfile"
-}
+    "name": "JetClusteringDevContainer",
+    "image": "Dockerfile",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+      // Add any Visual Studio Code extensions you need
+    ],
+    "runArgs": [
+      // Additional Docker run arguments
+    ],
+    "postCreateCommand": "bash .devcontainer/init.sh"
+  }
+  
