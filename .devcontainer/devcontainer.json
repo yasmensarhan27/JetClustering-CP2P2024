@@ -4,6 +4,6 @@
     "runArgs": [
       // Additional Docker run arguments
     ],
-    "postCreateCommand": "bash .devcontainer/init.sh"
+    "postCreateCommand": "ash .devcontainer/init.sh"
   }
   

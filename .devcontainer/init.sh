@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 # Source the environment setup scripts for ROOT CERN, FastJet, and Pythia
 source /path/to/root/bin/thisroot.sh
