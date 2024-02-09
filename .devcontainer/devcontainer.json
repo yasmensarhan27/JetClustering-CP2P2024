@@ -1,14 +1,4 @@
 {
-    "name": "Jet Clustering Project Environment",
-    "image": "your-project-name:latest", // Replace with your Docker image name
-    "extensions": [
-        "ms-vscode.cpptools"
-    ],
-    "forwardPorts": [
-        { "localPort": 8000, "containerPort": 8000 }   // Optional: Forward port for web visualization
-    ],
-    "settings": {
-        "compiler_target": "x86_64-linux-gnu" // Optional: Set compiler target if needed
-    }
+    "name": "JetClusteringProject",
+    "dockerFile": "Dockerfile"
 }
-
