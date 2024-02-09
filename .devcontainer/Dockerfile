@@ -1,18 +1,19 @@
+# Use an Ubuntu base image
 FROM ubuntu:20.04
 
 # Install necessary dependencies
-RUN apk update && \
-    DEBIAN_FRONTEND=noninteractive apk add -y \
-    build-essential \
-    cmake \
-    git \
-    wget \
-    g++ \
-    clang \
-    libx11-dev \
-    libxpm-dev \
-    libxft-dev \
-    libxext-dev \
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        build-essential \
+        cmake \
+        git \
+        wget \
+        g++ \
+        clang \
+        libx11-dev \
+        libxpm-dev \
+        libxft-dev \
+        libxext-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install ROOT CERN
@@ -43,7 +44,7 @@ RUN git clone --branch 'v8303' --depth 1 https://github.com/alisw/pythia8.git &&
     cd ..
 
 # Set the default shell
-SHELL ["/bin/ash", "-c"]
+SHELL ["/bin/bash", "-c"]
 
 # Set the default working directory
 WORKDIR /workspace
