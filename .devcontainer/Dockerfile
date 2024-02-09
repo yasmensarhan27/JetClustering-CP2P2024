@@ -9,13 +9,13 @@ RUN apt-get install -y \
     git \
     cmake \
     g++ \
-    clang\
+    clang \
     wget \
-    curl \
-    libx11-dev \
-    libxpm-dev \
-    libgl1-mesa-dev \
-    libglu1-mesa-dev
+    curl 
+    #libx11-dev \
+    #libxpm-dev \
+    #libgl1-mesa-dev \
+    #libglu1-mesa-dev
 
 # Install ROOT CERN
 #RUN wget https://root.cern.ch/root_v6.26.06.source.tar.gz
