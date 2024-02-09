@@ -1,6 +1,15 @@
+FROM mcr.microsoft.com/vscode/devcontainers/base:debian
+
+# Install necessary dependencies (example)
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       ubuntu-minimal \
+       ubuntu-standard \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # Use an Ubuntu base image
 FROM ubuntu:20.04
-
 # Install necessary dependencies
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
