@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y \
     libfastjet-dev \
     pythia8 \
     # Add any additional system dependencies here
-
 # Install additional project dependencies
 WORKDIR /your/project/path
 COPY requirements.txt ./
