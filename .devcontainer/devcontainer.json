@@ -1,9 +1,8 @@
 
 {
   "name": "Jet Clustering Project",
-  "service": "codespace",
   "build": {
-    "dockerfi": "Dockerfile"
+    "dockerfile": "Dockerfile"
   },
   "settings": {
     "hostPorts": [
