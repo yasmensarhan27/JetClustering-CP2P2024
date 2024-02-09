@@ -1,8 +1,14 @@
 {
     "name": "Jet Clustering Project Environment",
-    "image": "mcr.microsoft.com/vscode/devcontainers/cpp:0-ubuntu-20.04",
+    "image": "your-project-name:latest", // Replace with your Docker image name
     "extensions": [
         "ms-vscode.cpptools"
     ],
-    "postCreateCommand": "bash -c 'apt-get update && apt-get install -y git root-system-bin libfastjet-dev pythia8 && rm -rf /var/lib/apt/lists/*'"
+    "forwardPorts": [
+        { "localPort": 8000, "containerPort": 8000 }   // Optional: Forward port for web visualization
+    ],
+    "settings": {
+        "compiler_target": "x86_64-linux-gnu" // Optional: Set compiler target if needed
+    }
 }
+
