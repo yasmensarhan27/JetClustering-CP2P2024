@@ -18,29 +18,29 @@ RUN apt-get install -y \
     libglu1-mesa-dev
 
 # Install ROOT CERN
-RUN wget https://root.cern.ch/root_v6.26.06.source.tar.gz
-RUN tar xzf root_v6.26.06.source.tar.gz
-RUN mkdir -p root && cd root && \
-    ./configure --enable-roofit --enable-pythia8 --enable-fastjet && \
-    make -j $(nproc) && \
-    make install
+#RUN wget https://root.cern.ch/root_v6.26.06.source.tar.gz
+#RUN tar xzf root_v6.26.06.source.tar.gz
+#RUN mkdir -p root && cd root && \
+ #   ./configure --enable-roofit --enable-pythia8 --enable-fastjet && \
+  #  make -j $(nproc) && \
+  #  make install
 
 # Install Fastjet
-RUN wget https://downloads.fastjet.fr/public/releases/fastjet-3.7.4.tar.gz
-RUN tar xzf fastjet-3.7.4.tar.gz
-RUN mkdir -p fastjet && cd fastjet && \
-    ./configure && \
-    make -j $(nproc) && \
-    make install
+#RUN wget https://downloads.fastjet.fr/public/releases/fastjet-3.7.4.tar.gz
+#RUN tar xzf fastjet-3.7.4.tar.gz
+#RUN mkdir -p fastjet && cd fastjet && \
+#    ./configure && \
+#    make -j $(nproc) && \
+#    make install
 
 # Install Pythia8
-RUN wget https://pythia.org/download/pythia8/pythia8300.tgz
-RUN tar xzf pythia8300.tgz
-RUN mkdir -p pythia8 && cd pythia8 && \
-    ./configure && \
-    make -j $(nproc) && \
-    make install
-
+#RUN wget https://pythia.org/download/pythia8/pythia8300.tgz
+#RUN tar xzf pythia8300.tgz
+#RUN mkdir -p pythia8 && cd pythia8 && \
+#   ./configure && \
+#    make -j $(nproc) && \
+#    make install
+#
 # Set working directory
 WORKDIR /jet_clustering_project
 
