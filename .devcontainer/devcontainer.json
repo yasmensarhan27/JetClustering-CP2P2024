@@ -3,22 +3,7 @@
   "name": "Jet Clustering Project",
   "service": "codespace",
   "build": {
-    "dockerfi": "Dockerfile"
-  },
-  "settings": {
-    "hostPorts": [
-      {
-        "containerPort": 8000,
-        "hostPort": 3000
-      }
-    ]
-  },
-  "image": "mcr.microsoft.com/devcontainers/ubuntu:22.04",
-  "postCreateCommand": "bash .devcontainer/init.sh",
-  "postStartCommand": "chmod +x .devcontainer/init.sh && ./.devcontainer/init.sh",
-  "overrideCommand": false,
-  "remoteUser": "codespace",
-  "remoteEnv": {
-    "DOCKER_USER": "codespace"
+    "dockerfile": "Dockerfile",
+    "image": "mcr.microsoft.com/devcontainers/ubuntu:22.04"
   }
 }
