@@ -18,8 +18,8 @@ RUN apt-get install -y \
     libglu1-mesa-dev
 
 # Install ROOT CERN
-RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu22.04-x86_64-gcc11.4.tar.gz
-RUN tar xzf root_v6.30.04.source.tar.gz
+RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz
+RUN tar xzf root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz
 RUN mkdir -p root && cd root && \
     ./configure --enable-roofit --enable-pythia8 --enable-fastjet && \
     make -j $(nproc) && \
