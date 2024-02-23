@@ -1,7 +1,7 @@
 {
   "name": "Jet Clustering Project",
   "service": "codespace",
-  "build": {
+  "build":{
     "dockerfile": "Dockerfile"
   },
   "settings": {},
