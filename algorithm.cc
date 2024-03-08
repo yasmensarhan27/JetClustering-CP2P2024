@@ -5,7 +5,6 @@
 double distance(const fastjet::PseudoJet& p1, const fastjet::PseudoJet& p2) {
     return std::sqrt(std::pow(p1.eta() - p2.eta(), 2) + std::pow(p1.phi() - p2.phi(), 2));
 }
-
 std::pair<int, int> findClosestParticles(const std::vector<fastjet::PseudoJet>& particles) {
     int closestI = -1, closestJ = -1;
     double minDistance = std::numeric_limits<double>::max();
@@ -20,15 +19,12 @@ std::pair<int, int> findClosestParticles(const std::vector<fastjet::PseudoJet>& 
             }
         }
     }
-
     return {closestI, closestJ};
 }
-
 fastjet::PseudoJet mergeParticles(const fastjet::PseudoJet& p1, const fastjet::PseudoJet& p2) {
     // In a simple version, you can merge by adding their four-momenta
     return p1 + p2;
 }
-
 std::vector<fastjet::PseudoJet> KtAlgorithm::run(const std::vector<fastjet::PseudoJet>& inputParticles) {
     // Simplified kT algorithm
     std::vector<fastjet::PseudoJet> clusters = inputParticles;
