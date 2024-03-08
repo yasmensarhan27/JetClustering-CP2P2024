@@ -28,5 +28,7 @@ Function: distance(particle1, particle2)
 
 // Main program
 particles = { /* List of particle properties */ }
+
 jets = kt_clustering(particles)
+
 print properties of jets[0] (final clustered particle)
