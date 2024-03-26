@@ -17,3 +17,8 @@ It has methods to access properties such as transverse momentum (pt()), rapidity
 **std::cout:** This is the **standard output stream object in C++** used for printing output to the console.
 **std::endl:** This is an **I/O manipulator in C++** that represents a newline character. It is used to insert a newline and flush the output buffer.
 **unsigned:** This is an **unsigned integer data type** in C++ used to represent non-negative integers. It is used for the loop counters in the for loops.
+
+
+Reference:
+1-[FastJet User Manual](https://fastjet.fr/repo/fastjet-doc-3.4.2.pdf)
+2- [C++ Variables and types](https://cplusplus.com/doc/tutorial/variables/)
