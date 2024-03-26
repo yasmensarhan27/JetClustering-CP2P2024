@@ -13,10 +13,6 @@ RUN apt-get install -y \
     clang \
     wget \
     curl \
-    libx11-dev \
-    libxpm-dev \
-    libgl1-mesa-dev \
-    libglu1-mesa-dev
 
 # Install ROOT CERN
 RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
