@@ -1,7 +1,7 @@
 # Jet Clustering
 ## What Are Jets? [1](https://cms.cern/news/jets-cms-and-determination-their-energy-scale)
 "jets" refer to collimated hadrons produced during strong high-energy particle interactions, particularly in experiments conducted at particle accelerators. 
-The partons (eg. produced quarks and gluons) hadronize creating hadrons which collimate together creating the ”Jets”
+The partons (eg. produced quarks and gluons) hadronize creating hadrons which are collimated together creating the ”Jets”
 
 ##What is Jet Clustering?
  Jet clustering is a computational process used in particle physics to identify and analyze jets.
@@ -38,6 +38,9 @@ It provides efficient and robust algorithms for jet clustering.
 
 
 References:
+
 1- [JETS AT CMS AND THE DETERMINATION OF THEIR ENERGY SCALE](https://cms.cern/news/jets-cms-and-determination-their-energy-scale)
+
 2- [anti-kt algorithm](https://arxiv.org/abs/0802.1189)
+
 3- [Double Higgs production at CMS](https://www.researchgate.net/publication/362844439_Double_Higgs_production_at_CMS)
