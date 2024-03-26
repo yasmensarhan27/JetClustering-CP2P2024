@@ -6,6 +6,7 @@ The partons (eg. produced quarks and gluons) hadronize creating hadrons which ar
 ##What is Jet Clustering?
  Jet clustering is a computational process used in particle physics to identify and analyze jets.
 <img width="471" alt="image" src="https://github.com/ubsuny/JetClustering-CP2P2024/assets/38404107/48d7b95e-a251-4bd0-bfbd-077baad1716d">
+
 Fig.(1)[Jets are the experimental signatures of quarks and gluons produced in high-energy processes such as head-on proton-proton collisions](https://github.com/ubsuny/JetClustering-CP2P2024/assets/38404107/8cf340c3-6493-4ee5-a527-a5af587ca0d2)
 ][1](https://cms.cern/news/jets-cms-and-determination-their-energy-scale)
 
@@ -15,6 +16,7 @@ Grouping Particles:  reconstruct these jets by grouping the final state particl
 Further analysis can be done on the reconstructed jets.
 
 <img width="414" alt="image" src="https://github.com/ubsuny/JetClustering-CP2P2024/assets/38404107/99bbd06f-edb4-49c8-88cd-0d57a1c84892">
+
 Fig.(2)[3][Double Higgs production at CMS](https://www.researchgate.net/publication/362844439_Double_Higgs_production_at_CMS)
 
 ## Jet clustering algorithms
