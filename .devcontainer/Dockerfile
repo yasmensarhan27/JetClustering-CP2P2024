@@ -1,4 +1,8 @@
+# Use Ubuntu 20.04 as the base image
 FROM ubuntu:20.04
+
+# Set environment variable to prevent interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Update package lists and install necessary packages
 RUN apt-get update && \
