@@ -12,14 +12,16 @@ RUN apt-get install -y \
     clang\
     wget \
     curl \
-    libx11-dev \
-    libxpm-dev \
-    libgl1-mesa-dev \
-    libglu1-mesa-dev
+    ##libx11-dev \
+    #libxpm-dev \
+    #libgl1-mesa-dev \
+    #libglu1-mesa-dev
 
 # Install ROOT CERN
-RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu22.04-x86_64-gcc11.4.tar.gz
-RUN tar xzf root_v6.30.04.source.tar.gz
+
+RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz
+RUN tar xzf root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz
+
 RUN mkdir -p root && cd root && \
     ./configure --enable-roofit --enable-pythia8 --enable-fastjet && \
     make -j $(nproc) && \
@@ -34,15 +36,16 @@ RUN mkdir -p fastjet && cd fastjet && \
     make install
 
 # Install Pythia8
-RUN wget https://pythia.org/download/pythia83/pythia8310.tgz
-RUN tar xzf pythia8310.tgz
-RUN mkdir -p pythia8 && cd pythia8 && \
-    ./configure && \
-    make -j $(nproc) && \
-    make install
+#RUN wget https://pythia.org/download/pythia83/pythia8310.tgz
+#RUN tar xzf pythia8310.tgz
+#RUN mkdir -p pythia8 && cd pythia8 && \
+ #   ./configure && \
+ #   make -j $(nproc) && \
+ #   make install
+
 
 # Set working directory
-WORKDIR /jet_clustering_project
+WORKDIR /jetclustering
 
 # Copy your project files
 COPY . .

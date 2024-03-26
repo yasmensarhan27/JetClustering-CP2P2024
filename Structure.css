@@ -1,0 +1,13 @@
+my_jet_clustering/
+│
+├── src/
+│   ├── main.cpp
+│   ├── jet_clustering.cpp
+│   └── visualization.cpp
+│
+├── include/
+│   ├── jet_clustering.h
+│   └── visualization.h
+│
+├── CMakeLists.txt
+└── README.md
