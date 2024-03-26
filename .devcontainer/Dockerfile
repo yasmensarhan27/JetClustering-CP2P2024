@@ -15,13 +15,6 @@ RUN apt-get update && \
     wget \
     curl
 
-# Install Pythia8
-RUN wget https://pythia.org/download/pythia83/pythia8310.tgz
-RUN tar xzf pythia8310.tgz
-RUN mkdir -p pythia8 && cd pythia8 && \
-    ./configure && \
-    make -j $(nproc) && \
-    make install
 # Install Fastjet
 RUN wget http://fastjet.fr/repo/fastjet-3.4.2.tar.gz && \
     tar xzf fastjet-3.4.2.tar.gz && \
@@ -37,7 +30,7 @@ RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.
     
 # Configure and compile ROOT
 RUN cd root && \
-    ./configure --enable-roofit --enable-pythia8 --enable-fastjet && \
+    ./configure --enable-roofit --enable-fastjet && \
     make -j$(nproc) && \
     make install && \
     cd ..
