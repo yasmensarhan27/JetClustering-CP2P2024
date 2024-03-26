@@ -14,63 +14,53 @@ RUN apt-get update && \
     clang \
     wget \
     curl \
-    ca-certificates \
-    cpp \
-    cpp-9 \
-    dirmngr \
-    dpkg-dev \
-    fakeroot \
-    file \
-    gcc \
-    gcc-9 \
-    gcc-9-base \
-    git-man \
-    gnupg \
-    gnupg-l10n \
-    gnupg-utils \
-    gpg \
-    gpg-agent \
-    gpg-wks-client \
-    gpg-wks-server \
-    gpgconf \
-    gpgsm \
-    krb5-locales \
-    less \
-    lib32gcc-s1 \
-    lib32stdc++6 \
-    libalgorithm-diff-perl \
-    libalgorithm-diff-xs-perl \
-    libalgorithm-merge-perl \
-    libarchive13 \
-    libasan5 \
-    libasn1-8-heimdal \
-    libassuan0
+    libx11-dev \
+    libxpm-dev \
+    libgl1-mesa-dev \
+    libglu1-mesa-dev \
+    libssl-dev \
+    libpcre3-dev \
+    xlibmesa-glu-dev \
+    libglew-dev \
+    libftgl-dev \
+    libmysqlclient-dev \
+    libfftw3-dev \
+    libcfitsio-dev \
+    graphviz-dev \
+    libavahi-compat-libdnssd-dev \
+    libldap2-dev \
+    libxml2-dev \
+    libkrb5-dev \
+    libgsl-dev \
+    libqt5x11extras5-dev \
+    libclass-method-modifiers-perl \
+    libxml-libxml-perl \
+    libcrypt-openssl-rsa-perl \
+    libauthen-sasl-perl \
+    libmime-lite-perl \
+    libterm-readkey-perl \
+    libyaml-cpp-dev \
+    zlib1g-dev \
+    libtbb-dev \
+    liblzma-dev \
+    libbz2-dev \
+    python3-dev \
+    python3-numpy \
+    python3-pip \
+    python3-pyqt5 \
+    libopencv-dev \
+    libpython3-dev \
+    libboost-all-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Pythia8
-RUN wget https://pythia.org/download/pythia83/pythia8310.tgz && \
-    tar xzf pythia8310.tgz && \
-    cd pythia8310 && \
-    ./configure && \
-    make -j $(nproc) && \
-    make install && \
-    cd ..
-
-# Install Fastjet
-RUN wget http://fastjet.fr/repo/fastjet-3.4.2.tar.gz && \
-    tar xzf fastjet-3.4.2.tar.gz && \
-    cd fastjet-3.4.2 && \
-    ./configure && \
-    make -j $(nproc) && \
-    make install && \
-    cd ..
-
-# Download ROOT from the CERN website
+# Install ROOT CERN
 RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
     tar xzf root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
     rm root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
     cd root && \
     ./configure --enable-roofit --enable-pythia8 --enable-fastjet && \
-    make -j $(nproc) && \
+    make -j$(nproc) && \
     make install && \
     cd ..
 
