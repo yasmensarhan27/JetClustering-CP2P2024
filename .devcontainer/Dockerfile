@@ -35,20 +35,20 @@ RUN apt-get update && \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Install FastJet
+RUN wget http://fastjet.fr/repo/fastjet-3.4.2.tar.gz && \
+    tar xzf fastjet-3.4.2.tar.gz && \
+    cd fastjet-3.4.2 && \
+    ./configure --prefix=/usr/local && \
+    make -j$(nproc) && \
+    make install && \
+    cd ..
+
 # Install Pythia8
 RUN wget https://pythia.org/download/pythia83/pythia8310.tgz && \
     tar xzf pythia8310.tgz && \
     cd pythia8310 && \
     ./configure --with-fastjet3=/usr/local && \
-    make -j$(nproc) && \
-    make install && \
-    cd ..
-
-# Install Fastjet
-RUN wget http://fastjet.fr/repo/fastjet-3.4.2.tar.gz && \
-    tar xzf fastjet-3.4.2.tar.gz && \
-    cd fastjet-3.4.2 && \
-    ./configure --prefix=/usr/local && \
     make -j$(nproc) && \
     make install && \
     cd ..
