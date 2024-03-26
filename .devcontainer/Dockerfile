@@ -1,5 +1,6 @@
-FROM ubuntu:20.04
 
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND=noninteractive
 # Update package lists
 RUN apt-get update -y
 
