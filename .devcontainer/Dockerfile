@@ -32,37 +32,28 @@ RUN apt-get update && \
     libfftw3-dev \
     libcfitsio-dev \
     graphviz \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install FastJet
-RUN wget http://fastjet.fr/repo/fastjet-3.4.2.tar.gz && \
-    tar xzf fastjet-3.4.2.tar.gz && \
-    cd fastjet-3.4.2 && \
+# Install FastJet, Pythia8, and ROOT
+RUN wget -qO- http://fastjet.fr/repo/fastjet-3.4.2.tar.gz | tar xz -C /tmp && \
+    cd /tmp/fastjet-3.4.2 && \
     ./configure --prefix=/usr/local && \
     make -j$(nproc) && \
     make install && \
-    cd ..
-
-# Install Pythia8
-RUN wget https://pythia.org/download/pythia83/pythia8310.tgz && \
-    tar xzf pythia8310.tgz && \
-    cd pythia8310 && \
+    cd /tmp && rm -rf fastjet-3.4.2 && \
+    wget -qO- https://pythia.org/download/pythia83/pythia8310.tgz | tar xz -C /tmp && \
+    cd /tmp/pythia8310 && \
     ./configure --with-fastjet3=/usr/local && \
     make -j$(nproc) && \
     make install && \
-    cd ..
-
-# Download ROOT from the CERN website
-RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    tar xzf root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    rm root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    mv root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4 /usr/local/root
-
-# Set environment variables for ROOT
-ENV ROOTSYS=/usr/local/root
-ENV PATH=$ROOTSYS/bin:$PATH
-ENV LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
+    cd /tmp && rm -rf pythia8310 && \
+    wget -qO- https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz | tar xz -C /usr/local && \
+    mv /usr/local/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4 /usr/local/root && \
+    rm -f /usr/local/root/README && \
+    ln -s /usr/local/root/bin/* /usr/local/bin/ && \
+    ln -s /usr/local/root/lib/* /usr/local/lib/ && \
+    ln -s /usr/local/root/include/* /usr/local/include/ && \
+    echo "source /usr/local/root/bin/thisroot.sh" >> ~/.bashrc
 
 # Set working directory
 WORKDIR /jetclustering
