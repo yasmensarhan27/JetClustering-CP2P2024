@@ -11,13 +11,12 @@ RUN apt-get update && \
     git \
     cmake \
     g++ \
-    clang \
-    wget \
-    curl \
+    gcc \
+    binutils \
     libx11-dev \
     libxpm-dev \
-    libgl1-mesa-dev \
-    libglu1-mesa-dev \
+    libxft-dev \
+    libxext-dev \
     libssl-dev \
     libncurses5-dev \
     libxml2-dev \
@@ -32,9 +31,11 @@ RUN apt-get update && \
     libfftw3-dev \
     libcfitsio-dev \
     graphviz \
-    rsync && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    rsync \   
+    libpng-dev \  
+    libjpeg-dev \ 
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install FastJet
 RUN wget http://fastjet.fr/repo/fastjet-3.4.2.tar.gz && \
@@ -43,8 +44,7 @@ RUN wget http://fastjet.fr/repo/fastjet-3.4.2.tar.gz && \
     ./configure --prefix=/usr/local && \
     make -j$(nproc) && \
     make install && \
-    cd .. && \
-    rm -rf fastjet-3.4.2*
+    cd ..
 
 # Install Pythia8
 RUN wget https://pythia.org/download/pythia83/pythia8310.tgz && \
@@ -53,16 +53,13 @@ RUN wget https://pythia.org/download/pythia83/pythia8310.tgz && \
     ./configure --with-fastjet3=/usr/local && \
     make -j$(nproc) && \
     make install && \
-    cd .. && \
-    rm -rf pythia8310*
+    cd ..
 
 # Download ROOT from the CERN website
 RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    ls -l && \  # Debugging statement
     tar xzf root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    ls -l && \  # Debugging statement
-    mv root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4 /usr/local/root && \
-    rm -f root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz
+    rm root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
+    mv root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4 /usr/local/root
 
 # Set environment variables for ROOT
 ENV ROOTSYS=/usr/local/root
