@@ -58,7 +58,9 @@ RUN wget https://pythia.org/download/pythia83/pythia8310.tgz && \
 
 # Download ROOT from the CERN website
 RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
+    ls -l && \  # Debugging statement
     tar xzf root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
+    ls -l && \  # Debugging statement
     mv root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4 /usr/local/root && \
     rm -f root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz
 
