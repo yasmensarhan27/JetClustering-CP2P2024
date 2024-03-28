@@ -7,8 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Update package lists and install necessary packages, including rsync
 RUN apt-get update && \
     apt-get install -y \
-    build-essential \
-    git \
+    dpkg-dev \
     cmake \
     g++ \
     gcc \
@@ -17,23 +16,11 @@ RUN apt-get update && \
     libxpm-dev \
     libxft-dev \
     libxext-dev \
-    libssl-dev \
-    libncurses5-dev \
-    libxml2-dev \
-    libz-dev \
-    libbz2-dev \
-    libsqlite3-dev \
-    libcurl4-openssl-dev \
-    python \
+    libpng-dev \
+    libjpeg-dev \
     python3 \
-    libkrb5-dev \
-    libgsl-dev \
-    libfftw3-dev \
-    libcfitsio-dev \
-    graphviz \
-    rsync \   
-    libpng-dev \  
-    libjpeg-dev \ 
+    libssl-dev \
+    wget \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -55,11 +42,12 @@ RUN wget https://pythia.org/download/pythia83/pythia8310.tgz && \
     make install && \
     cd ..
 
-# Download ROOT from the CERN website
-RUN wget https://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
+# Download ROOT
+RUN wget http://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
     tar xzf root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
     rm root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    mv root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4 /usr/local/root
+    mv root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4 root && \
+    mv root /usr/local/
 
 # Set environment variables for ROOT
 ENV ROOTSYS=/usr/local/root
