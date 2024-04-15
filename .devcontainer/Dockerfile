@@ -1,8 +1,9 @@
-# Use Ubuntu 20.04 as the base image
-FROM ubuntu:20.04
+# Use ubuntu:21.10 as the base image
+FROM ubuntu:21.10
 
-# Set environment variable to prevent interactive prompts
-ENV DEBIAN_FRONTEND=noninteractive
+# Set environment variables
+ENV DEBIAN_FRONTEND noninteractive
+ENV LANG C.UTF-8
 
 # Update package lists and install necessary packages, including rsync
 RUN apt-get update && \
@@ -42,17 +43,16 @@ RUN wget https://pythia.org/download/pythia83/pythia8310.tgz && \
     make install && \
     cd ..
 
-# Download ROOT
-RUN wget http://root.cern/download/root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    tar xzf root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    rm root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4.tar.gz && \
-    mv root_v6.30.04.Linux-ubuntu20.04-x86_64-gcc9.4 root && \
-    mv root /usr/local/
+# Install ROOT
+RUN wget https://root.cern/download/root_v6.30.06.Linux-almalinux9.3-x86_64-gcc11.4.tar.gz &&\
+tar -xzvf root_v6.30.06.Linux-almalinux9.3-x86_64-gcc11.4.tar.gz &&\
+source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
 
 # Set environment variables for ROOT
-ENV ROOTSYS=/usr/local/root
-ENV PATH=$ROOTSYS/bin:$PATH
-ENV LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
+ENV ROOTSYS /usr/local/root
+ENV PATH $ROOTSYS/bin:$PATH
+ENV LD_LIBRARY_PATH $ROOTSYS/lib:$LD_LIBRARY_PATH
+ENV PYTHONPATH $ROOTSYS/lib:$PYTHONPATH
 
 # Set working directory
 WORKDIR /jetclustering
