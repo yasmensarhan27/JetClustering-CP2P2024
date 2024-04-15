@@ -5,8 +5,5 @@
   },
   "forwardPorts": [],
   "workspaceFolder": "/app",
-  "postCreateCommand": "cat .devcontainer/extensions.json | xargs -I % code-server --install-extension %",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  }
+  "postCreateCommand": "cat .devcontainer/extensions.json | xargs -I % code-server --install-extension %"
 }
