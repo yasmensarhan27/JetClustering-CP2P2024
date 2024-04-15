@@ -22,8 +22,8 @@ libjpeg-dev \
 python3 \
 libssl-dev \
 wget \
-&& sudo apt-get clean \
-&& sudo rm -rf /var/lib/apt/lists/*
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
 
 
 # Copy the current directory contents into the container at /app
