@@ -1,4 +1,4 @@
-t# Use an appropriate base image with necessary dependencies for building
+# Use an appropriate base image with necessary dependencies for building
 FROM ubuntu:20.04
 
 # Set environment variables
