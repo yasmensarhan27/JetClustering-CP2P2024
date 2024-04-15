@@ -7,7 +7,7 @@ ENV LANG C.UTF-8
 
 # Update package lists and install necessary packages
 RUN apt-get update && \
-sudo apt-get install -y \
+apt-get install -y \
 dpkg-dev \
 cmake \
 g++ \
