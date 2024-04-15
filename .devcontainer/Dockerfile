@@ -5,6 +5,29 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
+# Update package lists and install necessary packages
+RUN sudo apt-get update && \
+sudo apt-get install -y \
+dpkg-dev \
+cmake \
+g++ \
+gcc \
+binutils \
+libx11-dev \
+libxpm-dev \
+libxft-dev \
+libxext-dev \
+libpng-dev \
+libjpeg-dev \
+python3 \
+libssl-dev \
+wget \
+&& sudo apt-get clean \
+&& sudo rm -rf /var/lib/apt/lists/*
+
+
+# Copy the current directory contents into the container at /app
+COPY . /app
 
 # Specify the command to run on container start
 CMD ["bash"]
