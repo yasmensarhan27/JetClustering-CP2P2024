@@ -25,5 +25,8 @@ RUN apt-get update && \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Copy your project files
+COPY . .
+
 # Specify the command to run on container start
 CMD ["bash"]
