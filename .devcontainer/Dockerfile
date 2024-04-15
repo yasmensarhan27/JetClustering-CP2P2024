@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Update package lists and install necessary packages, including rsync
-RUN apt-get update && \
+RUN sudo apt-get update && \
     apt-get install -y \
     dpkg-dev \
     cmake \
