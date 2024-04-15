@@ -25,9 +25,6 @@ RUN apt-get update && \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Create the directory for the project
-RUN mkdir jet_clustering
-
 # Copy the current directory contents into the container at /app
 COPY . /jet_clustering
 
