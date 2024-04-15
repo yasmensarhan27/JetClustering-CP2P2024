@@ -4,3 +4,7 @@ FROM ubuntu:20.04
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
+
+
+# Specify the command to run on container start
+CMD ["bash"]
