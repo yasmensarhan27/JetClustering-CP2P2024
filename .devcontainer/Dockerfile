@@ -1,4 +1,4 @@
-# Use an appropriate base image with necessary dependencies for building
+t# Use an appropriate base image with necessary dependencies for building
 FROM ubuntu:20.04
 
 # Set environment variables
@@ -26,7 +26,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY . /jetclustering
 
 # Specify the command to run on container start
 CMD ["bash"]
