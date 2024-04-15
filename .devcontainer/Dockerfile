@@ -26,7 +26,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the current directory contents into the container at /app
-COPY . /jetclustering
+COPY . /jet clustering
 
 # Specify the command to run on container start
 CMD ["bash"]
