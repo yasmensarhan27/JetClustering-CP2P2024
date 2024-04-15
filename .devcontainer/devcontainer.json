@@ -1,10 +1,11 @@
 {
-  "name": "Jet Clustering Project",
-  "service": "codespace",
-  "build":{
-
-    "dockerfile": "Dockerfile"
-  },
-  "settings": {},
-  "extensions": [],
+    "name": "Jet Clustering",
+    "build":{
+  
+        "dockerfile": "Dockerfile"
+      },
+    "settings": {},
+    "extensions": [],
+    "forwardPorts": [],
+    "workspaceFolder": "/app"
 }
