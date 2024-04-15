@@ -1,11 +1,10 @@
 {
-    "name": "Jet Clustering",
-    "build":{
-  
-        "dockerfile": "Dockerfile"
-      },
-    "settings": {},
-    "extensions": [],
-    "forwardPorts": [],
-    "workspaceFolder": "/app"
+  "name": "Jet Clustering",
+  "build": {
+      "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [],
+  "runArgs": ["bash"],
+  "workspaceFolder": "/app",
+  "postCreateCommand": "cat .devcontainer/extensions.json | xargs -I % code-server --install-extension %"
 }
