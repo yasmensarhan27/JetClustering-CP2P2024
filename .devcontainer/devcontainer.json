@@ -4,6 +4,6 @@
     "dockerfile": "Dockerfile"
   },
   "forwardPorts": [],
-  "workspaceFolder": "/jet clustering",
+  "workspaceFolder": "/jet_clustering",
   "postCreateCommand": "cat .devcontainer/extensions.json | xargs -I % code-server --install-extension %"
 }
