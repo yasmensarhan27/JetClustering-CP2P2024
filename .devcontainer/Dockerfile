@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
 
 # Update package lists and install necessary packages
-RUN sudo apt-get update && \
+RUN apt-get update && \
 sudo apt-get install -y \
 dpkg-dev \
 cmake \
