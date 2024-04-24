@@ -1,0 +1,8 @@
+Clustered with Longitudinally invariant anti-kt algorithm with R = 0.7
+        pt y phi
+jet 0: 103.00130030978613 0.1 0.0010101006665645031
+    constituent 0's pt: 99.00005050503762
+    constituent 1's pt: 4.001249804748512
+jet 1: 99.0 0 3.141592653589793
+    constituent 0's pt: 99.0
+Runtime: 2.47955322265625e-05 seconds

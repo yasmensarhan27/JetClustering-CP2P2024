@@ -1,0 +1,44 @@
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+Fast Version - Clustered with Longitudinally invariant anti-kt algorithm with R = 0.7 and E scheme recombination
+        pt y phi
+jet 0: 281.7664584794276 0.05503688714527854 6.276754931539216
+    constituent 0's pt: 41.78386768037887
+    constituent 1's pt: 1.243239759930988
+    constituent 2's pt: 47.212712561592845
+    constituent 3's pt: 4.275875264751893
+    constituent 4's pt: 62.717923655265395
+    constituent 5's pt: 40.347688857299424
+    constituent 6's pt: 39.514848902235
+    constituent 7's pt: 44.791125237796756
+jet 1: 162.29909515564808 -1.4414114683411943 6.278126458524674
+    constituent 0's pt: 77.81234702028435
+    constituent 1's pt: 84.48687429133778
+Slow Version - Clustered with Longitudinally invariant anti-kt algorithm with R = 0.7 and E scheme recombination
+        pt y phi
+jet 0: 323.11438217431316 0.06609368684380361 0.000260674978486458
+    constituent 0's pt: 52.82294359075839
+    constituent 1's pt: 5.926107755928574
+    constituent 2's pt: 45.87044893720925
+    constituent 3's pt: 45.06871237535829
+    constituent 4's pt: 40.899734948819095
+    constituent 5's pt: 55.78253467344343
+    constituent 6's pt: 76.75771850522167
+jet 1: 211.05308089485314 -1.1391623051521171 6.2806620118310486
+    constituent 0's pt: 81.01706582241101
+    constituent 1's pt: 34.20924688626428
+    constituent 2's pt: 95.8337226051814
+Fast Runtime: 0.00024628639221191406 seconds
+Slow Runtime: 0.013132572174072266 seconds
+slow version is : 53.322362052274926 times longer than the fast version

@@ -1,0 +1,49 @@
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+TensorFlow Version - Clustered
+        pt y phi
+jet 0: 142.52699402630452 -2.132068854305764 5.778323024265915
+    constituent 0's pt: 78.18091181665963
+    constituent 1's pt: 38.44644271612623
+    constituent 2's pt: 25.899639493518656
+jet 1: 13.045486286240571 -0.43852606249159565 4.267383123639404
+    constituent 0's pt: 13.045486286240571
+jet 2: 84.58843425357206 1.9632289726121441 16.805757124877523
+    constituent 0's pt: 8.572883495286643
+    constituent 1's pt: 6.286623986370721
+    constituent 2's pt: 69.7289267719147
+jet 3: 54.76964429394964 0.6074784902039359 4.919929672761983
+    constituent 0's pt: 54.76964429394964
+jet 4: 16.24175547400761 -0.13587784112154822 2.1260492837871676
+    constituent 0's pt: 16.24175547400761
+jet 5: 37.20997803204923 0.3891244505520335 2.7084911904251343
+    constituent 0's pt: 37.20997803204923
+TensorFlow Runtime: 0.0007314682006835938 seconds
+
+FastJet Version - Clustered
+        pt y phi
+jet 0: 315.7448962911973 -3.006003248740465 0.000859202418275173
+    constituent 0's pt: 88.56132238667885
+    constituent 1's pt: 87.2316935804727
+    constituent 2's pt: 97.67730415092959
+    constituent 3's pt: 42.283609929389
+jet 1: 154.37970655307382 -1.9643171897592937 0.009276160004430031
+    constituent 0's pt: 21.450050168666387
+    constituent 1's pt: 16.79719551575525
+    constituent 2's pt: 21.346587521862325
+    constituent 3's pt: 55.38728038004102
+    constituent 4's pt: 39.43810014241741
+jet 2: 8.954932428032073 -0.4826068016838092 0.0640124494124067
+    constituent 0's pt: 8.954932428032073
+FastJet Runtime: 0.0008196830749511719 seconds
