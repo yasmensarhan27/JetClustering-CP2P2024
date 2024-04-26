@@ -1,8 +1,0 @@
-{
-  "name": "Jet Clustering",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
-  "forwardPorts": [],
-  "postCreateCommand": "cat .devcontainer/extensions.json | xargs -I % code-server --install-extension %"
-}
